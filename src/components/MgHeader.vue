@@ -147,8 +147,28 @@
             hushen300() {
                 window.open('https://legulegu.com/stockdata/marketcap-gdp', '_blank')
             },
+            queryData() {
+                this.axios({
+                    method: 'GET',
+                    url: 'http://localhost:1002/data/show/strategy/buffett?low=' + this.lowIndex + '&high=' + this.heightIndex
+                }).then(response => {
+                    console.log(response);
+                    let reg = /[;\r\n]/g;
+                    this.open(response.data.replace(reg, '<br/>'));
+                })
+            },
+            queryDataGraham() {
+                this.axios({
+                    method: 'GET',
+                    url: 'http://localhost:1002/data/show/strategy/graham?low=' + this.szLow + '&high=' + this.szHeight
+                }).then(response => {
+                    console.log(response);
+                    let reg = /[;\r\n]/g;
+                    this.open(response.data.replace(reg, '<br/>'));
+                })
+            },
             initData() {
-                axios({
+                this.axios({
                     method: 'GET',
                     url: 'http://localhost:1002/data/show/graph'
                 }).then(response => {
