@@ -138,6 +138,11 @@
                         optionra.series[0].data[index] = element.exchangeRate;
                         optionra.xAxis.data[index] = this.timestampToDate(element.createDate);
                     }
+                    for (let index = 0; index < value.priceEarningsRatios.length; index++) {
+                            const element = value.priceEarningsRatios[index];
+                            optionPer.series[0].data[index] = element.ratio;
+                            optionPer.xAxis.data[index] = this.timestampToDate(element.createDate);
+                        }
                     if (optionra && typeof optionra === 'object') {
                         usdcnyChart.setOption(optionra);
                         perChart.setOption(optionPer)
