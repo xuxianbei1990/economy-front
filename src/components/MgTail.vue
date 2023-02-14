@@ -5,7 +5,7 @@
                 <el-col>
                     <div>
                         <el-tag>逆回购</el-tag>
-                        <el-table :data="items" style="width: 100%">
+                        <el-table :data="items" style="width: 90%" height=480 :cell-style="{padding: '0.9%'}">
                             <el-table-column prop="price" label="价格" width="80">
                             </el-table-column>
                             <el-table-column prop="subPrice" label="减少货币" width="80">
@@ -28,7 +28,7 @@
                 <el-col>
                     <div>
                         <el-tag>MLF</el-tag>
-                        <el-table :data="mlfitems" style="width: 100%">
+                        <el-table :data="mlfitems" style="width: 90%">
                             <el-table-column prop="price" label="价格" width="80">
                             </el-table-column>
                             <el-table-column prop="subPrice" label="减少货币" width="80">

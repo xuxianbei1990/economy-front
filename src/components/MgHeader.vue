@@ -1,7 +1,6 @@
 <template>
     <div>
         <el-row>
-            <el-button type="primary" @click="dialogVisible = true">建议</el-button>
             <el-dialog title="建设银行建议" :visible.sync="dialogVisible" width="50%">
                 <el-button type="text" @click="setJS">建设银行</el-button>
                 <el-button type="text" @click="setICBC">ICBC银行</el-button>
@@ -18,48 +17,53 @@
                     <el-button type="primary" @click="dialogSure">确 定</el-button>
                 </span>
             </el-dialog>
-            <el-button type="primary">付费参考</el-button>
-            <el-col :span="2">
+            <el-col :span="1">
                 <div class="grid-content bg-purple">
                     <el-button type="primary" size="mini" @click="chuangye50">创业50</el-button>
                     <el-button type="primary" size="mini" @click="queryData">确定</el-button>
                 </div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="1">
                 <div class="grid-content bg-purple-light">
                     <el-input size="mini" v-model="cyNow" placeholder="现在"></el-input>
                     <el-input size="mini" v-model="cyHeight" placeholder="高于"></el-input>
                     <el-input size="mini" v-model="cyLow" placeholder="低于"></el-input>
                 </div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="1">
                 <div class="grid-content bg-purple">
                     <el-button type="primary" size="mini" @click="hushen300">沪深300</el-button>
                     <el-button type="primary" size="mini" @click="queryData">确定</el-button>
                 </div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="1">
                 <div class="grid-content bg-purple-light">
                     <el-input size="mini" v-model="hushenNow" placeholder="现在"></el-input>
                     <el-input size="mini" v-model="heightIndex" placeholder="高于"></el-input>
                     <el-input size="mini" v-model="lowIndex" placeholder="低于"></el-input>
                 </div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="1">
                 <div class="grid-content bg-purple">
                     <el-button type="primary" size="mini" @click="shangzheng50">上证50</el-button>
                     <el-button type="primary" size="mini" @click="queryDataGraham">确定</el-button>
                 </div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="1">
                 <div class="grid-content bg-purple-light">
                     <el-input size="mini" v-model="szNow" placeholder="现在"></el-input>
                     <el-input size="mini" v-model="szHeight" placeholder="高于"></el-input>
                     <el-input size="mini" v-model="szLow" placeholder="低于"></el-input>
                 </div>
             </el-col>
-            <el-button type="primary" @click="countryMaterialBenefits">国家福利</el-button>
-            <el-button type="primary" @click="AmericanReverseRepo">美国逆回购</el-button>
+            <el-col :span="10">
+                <el-button type="primary" @click="dialogVisible = true">建议</el-button>
+                <el-button type="primary">付费参考</el-button>
+                <el-button type="primary" @click="countryMaterialBenefits">国家福利</el-button>
+                <el-button type="primary" @click="AmericanReverseRepo">美国逆回购</el-button>
+                <el-button type="primary" @click="usdcny">美元兑RBM</el-button>
+            </el-col>
+            
         </el-row>
 
     </div>
@@ -125,6 +129,9 @@
                 }
                 this.dialogVisible = false
             },
+            usdcny() {
+                    window.open('https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml', '_blank')
+                },
             setSynthesis() {
                 this.textareavalue = proposes[6].remark;
                 this.btnIndex = 6;
