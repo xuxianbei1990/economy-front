@@ -63,7 +63,7 @@
                 <el-button type="primary" @click="AmericanReverseRepo">美国逆回购</el-button>
                 <el-button type="primary" @click="usdcny">美元兑RBM</el-button>
             </el-col>
-            
+
         </el-row>
 
     </div>
@@ -130,8 +130,8 @@
                 this.dialogVisible = false
             },
             usdcny() {
-                    window.open('https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml', '_blank')
-                },
+                window.open('https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml', '_blank')
+            },
             setSynthesis() {
                 this.textareavalue = proposes[6].remark;
                 this.btnIndex = 6;
@@ -173,6 +173,19 @@
                     let reg = /[;\r\n]/g;
                     this.open(response.data.replace(reg, '<br/>'));
                 })
+            },
+            open(value) {
+                this.$alert(value, '标题名称', {
+                    confirmButtonText: '确定',
+                    // callback: action => {
+                    //     console.log("1111")
+                    //     this.$message({
+                    //         type: 'info',
+                    //         message: `action: ${action}`
+                    //     });
+                    // },
+                    dangerouslyUseHTMLString: true
+                });
             },
             initData() {
                 this.axios({
