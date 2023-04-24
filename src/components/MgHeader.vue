@@ -44,7 +44,9 @@
       <el-col :span="1">
         <div class="grid-content bg-purple">
           <el-button type="primary" size="mini" @click="shangzheng50">上证50</el-button>
-          <el-button type="primary" size="mini" @click="queryDataGraham">确定</el-button>
+          <el-tooltip class="item" effect="dark" content="格雷厄姆指数 数值越高越值得加仓" placement="top-start">
+            <el-button type="primary" size="mini" @click="queryDataGraham">确定</el-button>
+          </el-tooltip>
         </div>
       </el-col>
       <el-col :span="1">

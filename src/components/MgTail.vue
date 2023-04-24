@@ -22,7 +22,9 @@
             <el-tag>MLF</el-tag>
             <el-table :data="mlfitems" style="width: 90%">
               <el-table-column prop="price" label="价格" width="80"></el-table-column>
-              <el-table-column prop="subPrice" label="减少货币" width="80"></el-table-column>
+              <el-table-column prop="subPrice" label="减少货币" width="80">
+                <!-- <template slot-scope="scope"> {{scope.row.subPrice}}% </template> -->
+              </el-table-column>
               <el-table-column prop="addPrice" label="增加货币" width="80"></el-table-column>
               <el-table-column prop="priceUnit" label="单位" width="80"></el-table-column>
               <el-table-column prop="period" label="周期"></el-table-column>
